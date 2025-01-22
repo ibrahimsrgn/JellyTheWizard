@@ -264,7 +264,7 @@ MonoBehaviour:
   TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  MinimumDistanceFromTarget: 0.3
+  MinimumDistanceFromTarget: 0.01
   AvoidObstacles:
     Enabled: 1
     DistanceLimit: 0
@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770097040215002722, guid: 40d314931d984924e92edb58e8a5ce3f, type: 3}
       propertyPath: Lens.FieldOfView
-      value: 50
+      value: 68.64295
       objectReference: {fileID: 0}
     - target: {fileID: 2770097040215002722, guid: 40d314931d984924e92edb58e8a5ce3f, type: 3}
       propertyPath: Target.TrackingTarget
@@ -435,15 +435,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5110917794594098794, guid: 40d314931d984924e92edb58e8a5ce3f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.046846114
+      value: 0.04684612
       objectReference: {fileID: 0}
     - target: {fileID: 5110917794594098794, guid: 40d314931d984924e92edb58e8a5ce3f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.063504264
+      value: -0.06350428
       objectReference: {fileID: 0}
     - target: {fileID: 5110917794594098794, guid: 40d314931d984924e92edb58e8a5ce3f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0029842474
+      value: 0.0029842488
       objectReference: {fileID: 0}
     - target: {fileID: 5110917794594098794, guid: 40d314931d984924e92edb58e8a5ce3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -558,7 +558,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
@@ -578,7 +578,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 50
+  field of view: 68.64295
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -604,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009182010}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.046846118, y: -0.06350427, z: 0.002984248, w: 0.996877}
+  m_LocalRotation: {x: 0.046846125, y: -0.063504286, z: 0.0029842493, w: 0.996877}
   m_LocalPosition: {x: -1.5646319, y: 1.8274317, z: -7.8668494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
