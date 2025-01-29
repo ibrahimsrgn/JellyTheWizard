@@ -18,6 +18,11 @@ public class InputManager : MonoBehaviour
         OnLookInput = Value.Get<Vector2>();
     }
 
+    void OnDeadLockToEnemy(InputValue Value)
+    {
+        DeadLockEnemy.Instance.DeadLockSpawner();
+    }
+
     void OnAttack() { }
 
     void OnInteract() { }
