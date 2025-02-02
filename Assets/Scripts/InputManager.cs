@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
 
     void OnDeadLockToEnemy(InputValue Value)
     {
-        DeadLockEnemy.Instance.DeadLockSpawner();
+        DeadLockEnemy.Instance.DeadLocker();
     }
 
     void OnAttack() { }

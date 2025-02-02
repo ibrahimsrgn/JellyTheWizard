@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - InvisibleColliders
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,7 +12,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - InvisibleCollider
+  - Enemy
   - 
   - 
   - 
