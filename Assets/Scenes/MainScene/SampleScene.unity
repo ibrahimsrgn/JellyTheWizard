@@ -1531,6 +1531,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432680872}
   m_CullTransparentMesh: 1
+--- !u!1 &1459519665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459519666}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1459519666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459519665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.00299, z: 0.00303}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8533328999512316997}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1511378359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +2953,7 @@ GameObject:
   - component: {fileID: 2011320318}
   - component: {fileID: 2011320317}
   - component: {fileID: 2011320322}
+  - component: {fileID: 2011320323}
   m_Layer: 0
   m_Name: Jelly The Wizard
   m_TagString: Player
@@ -3047,6 +3079,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdff40a8c46a54f4cbcaa10c71436415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2011320323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011320316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8431808a058400e4eaa1073a8bb92f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 920954971928395533, guid: e346ca367c107014fb03dc9d616ee3b3, type: 3}
+  target: {fileID: 246770283}
+  firePoint: {fileID: 1459519666}
 --- !u!1 &2064748838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3650,8 @@ Transform:
   m_LocalPosition: {x: 0.41504693, y: -0.17569694, z: 0.36408427}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1459519666}
   m_Father: {fileID: 2011320321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
