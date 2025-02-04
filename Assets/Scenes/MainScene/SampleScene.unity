@@ -3092,6 +3092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
+  - {fileID: 2573282192751296438, guid: 6e034a89d029ca04e814fc369d94fde0, type: 3}
   - {fileID: 920954971928395533, guid: e346ca367c107014fb03dc9d616ee3b3, type: 3}
   target: {fileID: 246770283}
   firePoint: {fileID: 1459519666}
