@@ -988,7 +988,7 @@ Transform:
   m_GameObject: {fileID: 1018960514}
   serializedVersion: 2
   m_LocalRotation: {x: 0.04684613, y: -0.06350425, z: 0.0029842486, w: 0.996877}
-  m_LocalPosition: {x: -2.4185498, y: 0.7150724, z: -3.9745796}
+  m_LocalPosition: {x: -5.1615496, y: 0.71743166, z: -11.93458}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2901,7 +2901,7 @@ Transform:
   m_GameObject: {fileID: 2009182010}
   serializedVersion: 2
   m_LocalRotation: {x: 0.046846133, y: -0.06350426, z: 0.0029842483, w: 0.996877}
-  m_LocalPosition: {x: -3.6163466, y: 1.342296, z: -4.0682464}
+  m_LocalPosition: {x: -6.3593464, y: 1.3446553, z: -12.028247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3056,8 +3056,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011320316}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000003774895, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.927, y: 0.33764076, z: 0}
+  m_LocalRotation: {x: -0.000000030247122, y: 0.59830266, z: -0.000000022585297, w: 0.80127025}
+  m_LocalPosition: {x: -5.67, y: 0.34, z: -7.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3066,7 +3066,7 @@ Transform:
   - {fileID: 8533328999512316997}
   - {fileID: 3846963601327211517}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 73.497, z: 0}
 --- !u!114 &2011320322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3092,8 +3092,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
+  - {fileID: 109234916512774797, guid: 6abff561accca234d828af5e6e5ed5aa, type: 3}
   - {fileID: 2573282192751296438, guid: 6e034a89d029ca04e814fc369d94fde0, type: 3}
   - {fileID: 920954971928395533, guid: e346ca367c107014fb03dc9d616ee3b3, type: 3}
+  - {fileID: 2369827662591843918, guid: d5646578807562f4f915745ce5baecb7, type: 3}
+  - {fileID: 933472419421670907, guid: c547f8daf868cfd43857b6b7ece71381, type: 3}
+  - {fileID: 496452691944851574, guid: 60ed5f7138afb6f4096156db8a96d969, type: 3}
   target: {fileID: 246770283}
   firePoint: {fileID: 1459519666}
 --- !u!1 &2064748838
