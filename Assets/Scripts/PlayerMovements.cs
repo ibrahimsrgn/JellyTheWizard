@@ -15,7 +15,7 @@ public class PlayerMovements : MonoBehaviour
 
     #endregion
 
-    private void FixedUpdate()
+    private void Update()
     {
         PlayerWASD();
         PlayerRotate();

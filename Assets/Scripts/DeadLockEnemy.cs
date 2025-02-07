@@ -1,8 +1,10 @@
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class DeadLockEnemy : MonoBehaviour
 {
+    public CinemachineCamera LockOnCamera;
     private float DistanceToEnemy;
     public static DeadLockEnemy Instance { get; private set; }
     private Ray DeadLockRay;
@@ -28,9 +30,10 @@ public class DeadLockEnemy : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     DistanceToEnemy = hit.distance;
+                    LockOnCamera.LookAt = hit.transform;  
+                    LockOnCamera.gameObject.SetActive(true);
                 }
             }
         }
-        Debug.Log("Distance to Enemy: " + DistanceToEnemy);
     }
 }
