@@ -22,6 +22,10 @@ public class InputManager : MonoBehaviour
     {
         DeadLockEnemy.Instance.DeadLocker();
     }
+    void OnDeadLockOff(InputValue Value)
+    {
+        DeadLockEnemy.Instance.DeadUnlocker();
+    }
 
     void OnAttack() { }
 

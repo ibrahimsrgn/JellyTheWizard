@@ -38,4 +38,10 @@ public class DeadLockEnemy : MonoBehaviour
             }
         }
     }
+
+    public void DeadUnlocker()
+    {
+        LockOnCamera.gameObject.SetActive(false);
+        LockOnCamera.LookAt = null;
+    }
 }
