@@ -14,6 +14,8 @@ public class SkillManager : MonoBehaviour
     }
     public void UseSkill()
     {
+        if(DeadLockEnemy.Instance.selectedEnemy != null)
+        target = DeadLockEnemy.Instance.selectedEnemy;
         GameObject skillPrefab = Instantiate(skills[0], firePoint.position, Quaternion.identity);
         Skill skill = skillPrefab.GetComponent<Skill>();
         skill.target = target;

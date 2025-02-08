@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeadLockEnemy : MonoBehaviour
 {
+    public Transform selectedEnemy;
     public CinemachineCamera LockOnCamera;
     private float DistanceToEnemy;
     public static DeadLockEnemy Instance { get; private set; }
@@ -29,6 +30,7 @@ public class DeadLockEnemy : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
+                    selectedEnemy = hit.transform;
                     DistanceToEnemy = hit.distance;
                     LockOnCamera.LookAt = hit.transform;  
                     LockOnCamera.gameObject.SetActive(true);

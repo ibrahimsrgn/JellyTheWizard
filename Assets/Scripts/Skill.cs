@@ -38,5 +38,6 @@ public class Skill : MonoBehaviour
     private void Buff()
     {
         //Buff
+        //TODO make stats react
     }
 }
