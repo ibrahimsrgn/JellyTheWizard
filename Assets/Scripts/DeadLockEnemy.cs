@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class DeadLockEnemy : MonoBehaviour
     public Transform selectedEnemy;
     public CinemachineCamera LockOnCamera;
     private float DistanceToEnemy;
+    public float Radius = 5f;
     public static DeadLockEnemy Instance { get; private set; }
     private Ray DeadLockRay;
     
@@ -18,11 +20,15 @@ public class DeadLockEnemy : MonoBehaviour
     public void DeadLocker()
     {
         Vector3 center = transform.position;
-        float radius = 5f;
         LayerMask layerMask = LayerMask.GetMask("Enemy");
 
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius, layerMask);
-        DistanceToEnemy = 25f;
+        Collider[] hitColliders = Physics.OverlapSphere(center, Radius, layerMask);
+        if (hitColliders.Length == 0)
+        {
+            DeadUnlocker();
+            return;
+        }
+        DistanceToEnemy = Radius;
         foreach (Collider col in hitColliders)
         {
             DeadLockRay = new Ray(transform.position, col.transform.position - transform.position);
@@ -32,9 +38,25 @@ public class DeadLockEnemy : MonoBehaviour
                 {
                     selectedEnemy = hit.transform;
                     DistanceToEnemy = hit.distance;
-                    LockOnCamera.LookAt = hit.transform;  
+                    LockOnCamera.LookAt = hit.transform;
                     LockOnCamera.gameObject.SetActive(true);
                 }
+                //else if (LockOnCamera.LookAt == hit.transform) DeadNextlocker(hit.distance);
+            }
+        }
+    }
+
+    private void DeadNextlocker(float MinDistance)
+    {
+        DistanceToEnemy = Radius;
+        if (Physics.Raycast(DeadLockRay, out RaycastHit hit, DistanceToEnemy) && DistanceToEnemy > MinDistance)
+        {
+            if (hit.collider.CompareTag("Enemy") && LockOnCamera.LookAt != hit.transform)
+            {
+                selectedEnemy = hit.transform;
+                DistanceToEnemy = hit.distance;
+                LockOnCamera.LookAt = hit.transform;
+                LockOnCamera.gameObject.SetActive(true);
             }
         }
     }
