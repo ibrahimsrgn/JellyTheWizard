@@ -14,6 +14,7 @@ public class DeadLockEnemy : MonoBehaviour
     
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Instance = this;
     }
 
