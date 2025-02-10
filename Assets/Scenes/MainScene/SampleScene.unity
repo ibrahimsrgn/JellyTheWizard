@@ -3064,7 +3064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedEnemy: {fileID: 0}
   LockOnCamera: {fileID: 196019260595022120}
-  Radius: 5
+  Radius: 25
 --- !u!114 &2011320323
 MonoBehaviour:
   m_ObjectHideFlags: 0
