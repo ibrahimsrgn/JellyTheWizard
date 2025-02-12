@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class Skill : MonoBehaviour
@@ -6,38 +6,71 @@ public class Skill : MonoBehaviour
     public enum SkillType
     {
         SingleTarget,
-        AEO,
+        AOE, // AEO yerine AOE düzeltilmiş
         Buff
     }
+
     public SkillType type;
     public Transform target;
+    public float skillSpeed = 5f; // Hız kontrolü için
+
+    private bool isMoving = false;
+    private Vector3 startPosition;
+    private float t = 0f;
+
     public void UseSkill()
     {
+        if (target == null)
+        {
+            Debug.LogWarning("Target is null! Cannot use skill.");
+            return;
+        }
+
         switch (type)
         {
             case SkillType.SingleTarget:
-                ShootSingleTargetSkill(target);
+                StartSingleTargetSkill(target);
                 break;
-            case SkillType.AEO:
-                ShootAEOSkill(target);
+            case SkillType.AOE:
+                StartAOESkill(target);
                 break;
             case SkillType.Buff:
-                Buff();
+                ApplyBuff();
                 break;
         }
     }
-    private void ShootSingleTargetSkill(Transform target)
+
+    private void StartSingleTargetSkill(Transform target)
     {
-        transform.DOMove(target.position, 1);
-        transform.LookAt(target.position);
+        startPosition = transform.position;
+        isMoving = true;
+        t = 0f;
     }
-    private void ShootAEOSkill(Transform target)
+
+    private void StartAOESkill(Transform target)
     {
-        transform.DOMove(target.position, 0);
+        startPosition = target.position;
+        isMoving = true;
+        t = 0f;
     }
-    private void Buff()
+
+    private void ApplyBuff()
     {
-        //Buff
-        //TODO make stats react
+        // TODO BUFF
+    }
+
+    private void Update()
+    {
+        if (isMoving && target != null)
+        {
+            t += Time.deltaTime * skillSpeed;
+            transform.position = Vector3.Lerp(startPosition, target.position, t);
+            transform.LookAt(target.position);
+
+            if (t >= 1f)
+            {
+                isMoving = false;
+            }
+        }
     }
 }
