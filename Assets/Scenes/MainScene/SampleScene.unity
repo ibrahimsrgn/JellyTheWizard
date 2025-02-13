@@ -3176,10 +3176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
-  - {fileID: 2369827662591843918, guid: d5646578807562f4f915745ce5baecb7, type: 3}
+  - {fileID: 883799248921277459, guid: 10814c5d4c4c44f46a3dd8399da04b69, type: 3}
+  - {fileID: 7112067948354075035, guid: 9e9c6a285f8c79b4cadf4ed62f68d1d5, type: 3}
+  - {fileID: 933472419421670907, guid: c547f8daf868cfd43857b6b7ece71381, type: 3}
+  - {fileID: 8044827543618454677, guid: b87c2042957bc6446b0ffd053e0ccc8d, type: 3}
+  - {fileID: 470452351184278102, guid: 2a434ad9fa88e7945a67498213e06f17, type: 3}
   - {fileID: 109234916512774797, guid: 6abff561accca234d828af5e6e5ed5aa, type: 3}
-  - {fileID: 2573282192751296438, guid: 6e034a89d029ca04e814fc369d94fde0, type: 3}
+  - {fileID: 2369827662591843918, guid: d5646578807562f4f915745ce5baecb7, type: 3}
   - {fileID: 920954971928395533, guid: e346ca367c107014fb03dc9d616ee3b3, type: 3}
+  - {fileID: 2573282192751296438, guid: 6e034a89d029ca04e814fc369d94fde0, type: 3}
   - {fileID: 8855202846591817972, guid: 9fc2f73415d7500438a74b48df23ab2b, type: 3}
   target: {fileID: 246770283}
   firePoint: {fileID: 1459519666}

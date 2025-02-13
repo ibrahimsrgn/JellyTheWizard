@@ -4903,6 +4903,7 @@ GameObject:
   - component: {fileID: 6676308718044524995}
   - component: {fileID: 1073378071725996588}
   - component: {fileID: 5338988946806785997}
+  - component: {fileID: 7644073581494628523}
   m_Layer: 0
   m_Name: Meteors AOE
   m_TagString: Untagged
@@ -8753,7 +8754,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -9826,6 +9827,22 @@ MonoBehaviour:
   type: 1
   target: {fileID: 0}
   skillSpeed: 5
+--- !u!114 &7644073581494628523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883799248921277459}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
 --- !u!1 &2607376137191573821
 GameObject:
   m_ObjectHideFlags: 0
@@ -34438,7 +34455,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.75e-43, y: 9.4e-44, z: 0, w: -5.3105603e+29}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
