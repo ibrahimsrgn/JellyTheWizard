@@ -17,6 +17,7 @@ public class PlayerMovements : MonoBehaviour
 
     private void Update()
     {
+        Gravity();
         PlayerWASD();
         PlayerRotate();
     }
@@ -29,7 +30,15 @@ public class PlayerMovements : MonoBehaviour
 
     private void Gravity()
     {
-
+        if (!Controller.isGrounded)
+        {
+            VelocityOfPlayer += Physics.gravity.y * Time.deltaTime;
+        }
+        else
+        {
+            VelocityOfPlayer = 0;
+        }
+        Controller.Move(new Vector3(0, VelocityOfPlayer, 0) * Time.deltaTime);
     }
     
     private void PlayerRotate()

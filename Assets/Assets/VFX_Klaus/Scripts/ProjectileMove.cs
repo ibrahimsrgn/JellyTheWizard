@@ -46,7 +46,6 @@ public class ProjectileMove : MonoBehaviour
     void OnCollisionEnter (Collision co)
     {
         speed = 0;
-        Debug.Log(co.gameObject.name);
         ContactPoint contact = co.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
