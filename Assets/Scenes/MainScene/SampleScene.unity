@@ -7712,6 +7712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6355d83c0066dbf42b8d0f93e4074c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PatrolRadius: 20
   Agent: {fileID: 0}
   Target: {fileID: 0}
 --- !u!195 &1955059804
@@ -7728,7 +7729,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 240
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

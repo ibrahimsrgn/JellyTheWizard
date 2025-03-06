@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileMove : MonoBehaviour
 {
+    public float Damage;
     public float speed;
     public float fireRate;
     public GameObject muzzlePrefab;
@@ -45,6 +46,10 @@ public class ProjectileMove : MonoBehaviour
     }
     void OnCollisionEnter (Collision co)
     {
+        if (co.gameObject.GetComponent<HealthManager>() != null)
+        {
+            co.gameObject.GetComponent<HealthManager>().ApplyDamage(Damage);
+        }
         speed = 0;
         ContactPoint contact = co.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
