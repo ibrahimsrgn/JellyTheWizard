@@ -1,14 +1,21 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-public class NavMeshAIScript : MonoBehaviour
+public class EnemyAIScript : MonoBehaviour
 {
-
-    public float PatrolRadius;
-    public NavMeshAgent Agent;
-    public Transform PlayerRef;
+    [HideInInspector] public NavMeshAgent Agent;
+    [HideInInspector] public Transform PlayerRef;
+    [Header("Navmesh Settings")]
     public float FieldOfViewAngle = 110f;
     public float DetectionRadius = 10f;
+    public float PatrolRadius;
+    public float NavMeshStoppingDistance;
+
+    [Header("Enemy Settings")]
+    public float AttackDamage;
+    public float AttackSpeed;
+    public float AttackRange;
 
     private IEnemyState CurrentState;
 
@@ -31,7 +38,6 @@ public class NavMeshAIScript : MonoBehaviour
         CurrentState = NewState;
         CurrentState.EnterState(this);
     }
-
 }
 
 /*private void RandomPatrolPoint()
