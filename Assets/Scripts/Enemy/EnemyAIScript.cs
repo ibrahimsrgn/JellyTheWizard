@@ -45,7 +45,7 @@ public class EnemyAIScript : MonoBehaviour
         GameObject skillPrefab = Instantiate(EnemySkill, transform.position, Quaternion.identity);
         Skill skill = skillPrefab.GetComponent<Skill>();
         skill.target = PlayerRef;
-        skill.UseSkill();
+        skill.UseSkill(Skill.SkillType.SingleTarget);
     }
 }
 
