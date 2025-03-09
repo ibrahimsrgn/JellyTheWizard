@@ -16,7 +16,7 @@ public class IdleState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        Debug.Log("Idle: Bekliyor...");
+        //Debug.Log("Idle: Bekliyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
@@ -29,7 +29,7 @@ public class IdleState : IEnemyState
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        Debug.Log("Idle: Çýkýlýyor...");
+        //Debug.Log("Idle: Çýkýlýyor...");
     }
 }
 
@@ -39,7 +39,7 @@ public class ChaseState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        Debug.Log("Chase: Baþlýyor...");
+        //Debug.Log("Chase: Baþlýyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
@@ -53,7 +53,7 @@ public class ChaseState : IEnemyState
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        Debug.Log("Chase: Bitiyor...");
+        //Debug.Log("Chase: Bitiyor...");
     }
 }
 /* ------------------------------------------------------------------------------------------------- */
@@ -61,25 +61,24 @@ public class AttackState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        Debug.Log("Attack: Baþlýyor...");
+        //Debug.Log("Attack: Baþlýyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
     {
-        Debug.Log("bam bam bam");
-        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) > Enemy.NavMeshStoppingDistance)
+        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) > 4)
         {
             Enemy.SwitchState(new ChaseState());
         }
         else
         {
-            
+            Enemy.EnemySkillAttack();
         }
     }
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        Debug.Log("Attack: Bitiyor...");
+        //Debug.Log("Attack: Bitiyor...");
     }
 
 }

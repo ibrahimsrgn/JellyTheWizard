@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyAIScript : MonoBehaviour
 {
     [HideInInspector] public NavMeshAgent Agent;
-    [HideInInspector] public Transform PlayerRef;
+    public Transform PlayerRef;
     [Header("Navmesh Settings")]
     public float FieldOfViewAngle = 110f;
     public float DetectionRadius = 10f;
@@ -16,6 +16,7 @@ public class EnemyAIScript : MonoBehaviour
     public float AttackDamage;
     public float AttackSpeed;
     public float AttackRange;
+    public GameObject EnemySkill;
 
     private IEnemyState CurrentState;
 
@@ -37,6 +38,14 @@ public class EnemyAIScript : MonoBehaviour
         CurrentState.ExitState(this);
         CurrentState = NewState;
         CurrentState.EnterState(this);
+    }
+
+    public void EnemySkillAttack()
+    {
+        GameObject skillPrefab = Instantiate(EnemySkill, transform.position, Quaternion.identity);
+        Skill skill = skillPrefab.GetComponent<Skill>();
+        skill.target = PlayerRef;
+        skill.UseSkill();
     }
 }
 
