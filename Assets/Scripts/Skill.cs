@@ -13,19 +13,20 @@ public class Skill : MonoBehaviour
     public SkillType type;
     public Transform target;
     public float skillSpeed = 5f; // Hız kontrolü için
+    public float skillDuration = 5f; // Süre kontrolü için
 
     private bool isMoving = false;
     private Vector3 startPosition;
     private float t = 0f;
 
-    public void UseSkill()
+    public void UseSkill(SkillType skillType)
     {
         if (target == null)
         {
             Debug.LogWarning("Target is null! Cannot use skill.");
             return;
         }
-
+        type = skillType;
         switch (type)
         {
             case SkillType.SingleTarget:
@@ -56,6 +57,7 @@ public class Skill : MonoBehaviour
 
     private void ApplyBuff()
     {
+        transform.SetParent(target);
         // TODO BUFF
     }
 

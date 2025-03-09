@@ -26,7 +26,11 @@ public class InputManager : MonoBehaviour
     {
         DeadLockEnemy.Instance.DeadUnlocker();
     }
-
+    void OnSkillHotBar(InputValue inputValue)
+    {
+        int.TryParse(GetComponent<PlayerInput>().actions["SkillHotBar"].activeControl.name, out int skill);
+        SkillManager.Instance.ChangeSkillTree(skill);
+    }
     void OnAttack() { }
 
     void OnInteract() { }
