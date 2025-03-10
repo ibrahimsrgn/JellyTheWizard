@@ -14,6 +14,7 @@ public class Skill : MonoBehaviour
     public Transform target;
     public float skillSpeed = 5f; // Hız kontrolü için
     public float skillDuration = 5f; // Süre kontrolü için
+    public int damage;
 
     private bool isMoving = false;
     private Vector3 startPosition;
@@ -73,6 +74,14 @@ public class Skill : MonoBehaviour
             {
                 isMoving = false;
             }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (type == SkillType.Buff) return;
+        if (other.gameObject.GetComponent<HealthManager>() != null)
+        {
+            other.gameObject.GetComponent<HealthManager>().ApplyDamage(damage);
         }
     }
 }

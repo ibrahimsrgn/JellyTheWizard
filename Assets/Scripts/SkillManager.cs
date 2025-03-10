@@ -14,6 +14,7 @@ public class SkillManager : MonoBehaviour
     [SerializeField] private Transform firePoint;
     private int skillIndex = 0;
     public SkillTree skillTree;
+    public Skill.SkillType skillType;
     private void Awake()
     {
         if (Instance == null)
@@ -40,38 +41,28 @@ public class SkillManager : MonoBehaviour
     {
         Skill _skill= skills[skillIndex].GetComponent<Skill>();
         Debug.Log(_skill.type);
+        GameObject skillPrefab=null;
         if (_skill.type==Skill.SkillType.Buff)
         {
-            GameObject skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
-            Skill skill = skillPrefab.GetComponent<Skill>();
-            skill.target = transform;
-            skill.UseSkill(Skill.SkillType.Buff);
-            Debug.Log(skill);
-            Destroy(skillPrefab, skill.skillDuration);
-
+             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
+            target = transform;
+            skillType = Skill.SkillType.Buff;
         }
         else if (_skill.type == Skill.SkillType.SingleTarget)
         {
-            if (DeadLockEnemy.Instance.selectedEnemy != null)
                 target = DeadLockEnemy.Instance.selectedEnemy;
-            GameObject skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
-            Skill skill = skillPrefab.GetComponent<Skill>();
-            skill.target = target;
-            skill.UseSkill(Skill.SkillType.SingleTarget);
-            Debug.Log(skill);
-            Destroy(skillPrefab, skill.skillDuration);
+             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
+            skillType = Skill.SkillType.SingleTarget;
         }
         else if (_skill.type == Skill.SkillType.AOE)
         {
-            if (DeadLockEnemy.Instance.selectedEnemy != null)
                 target = DeadLockEnemy.Instance.selectedEnemy;
-            GameObject skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
-            Skill skill = skillPrefab.GetComponent<Skill>();
-            skill.target = target;
-            skill.UseSkill(Skill.SkillType.AOE);
-            Debug.Log(skill);
-            Destroy(skillPrefab, skill.skillDuration);
+             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
+            skillType= Skill.SkillType.AOE;
         }
+        Skill skill= skillPrefab?.GetComponent<Skill>();
+        skill.target = target;
+        skill.type=skillType;
     }
 
     public void ChangeSkillTree(int skillInt)
@@ -91,7 +82,6 @@ public class SkillManager : MonoBehaviour
                 skillTree = SkillTree.telekinesis;
                 break;
         }
-        Debug.Log(skillTree);
     }
 
 }
