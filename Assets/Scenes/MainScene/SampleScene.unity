@@ -7802,6 +7802,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6355d83c0066dbf42b8d0f93e4074c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Agent: {fileID: 0}
+  PlayerRef: {fileID: 0}
+  FieldOfViewAngle: 110
+  DetectionRadius: 10
+  PatrolRadius: 0
+  NavMeshStoppingDistance: 0
+  AttackDamage: 0
+  AttackSpeed: 0
+  AttackRange: 0
+  EnemySkill: {fileID: 9070474633162843459, guid: 356cf4dca1465b54fabbb8cd9b1cd190, type: 3}
 --- !u!114 &1955059808
 MonoBehaviour:
   m_ObjectHideFlags: 0
