@@ -7809,7 +7809,7 @@ MonoBehaviour:
   PatrolRadius: 0
   NavMeshStoppingDistance: 0
   AttackDamage: 0
-  AttackSpeed: 0
+  AttackSpeed: 1
   AttackRange: 0
   EnemySkill: {fileID: 9070474633162843459, guid: 356cf4dca1465b54fabbb8cd9b1cd190, type: 3}
 --- !u!114 &1955059808

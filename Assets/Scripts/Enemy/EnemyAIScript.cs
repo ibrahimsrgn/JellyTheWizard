@@ -10,12 +10,12 @@ public class EnemyAIScript : MonoBehaviour
     public float FieldOfViewAngle = 110f;
     public float DetectionRadius = 10f;
     public float PatrolRadius;
-    public float NavMeshStoppingDistance;
 
     [Header("Enemy Settings")]
     public float AttackDamage;
     public float AttackSpeed;
     public float AttackRange;
+    private bool EnemyCanAttack = true;
     public GameObject EnemySkill;
 
     private IEnemyState CurrentState;
@@ -42,10 +42,21 @@ public class EnemyAIScript : MonoBehaviour
 
     public void EnemySkillAttack()
     {
+        if (EnemyCanAttack)
+        {
+            EnemyCanAttack = false;
+            StartCoroutine(AttackToPlayer());
+        }
+    }
+
+    private IEnumerator AttackToPlayer()
+    {
+        yield return new WaitForSeconds(AttackSpeed);
         GameObject skillPrefab = Instantiate(EnemySkill, transform.position, Quaternion.identity);
         Skill skill = skillPrefab.GetComponent<Skill>();
         skill.target = PlayerRef;
         skill.UseSkill(Skill.SkillType.SingleTarget);
+        EnemyCanAttack = true;
     }
 }
 
