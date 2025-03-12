@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMove : MonoBehaviour
+public class ProjectileEffectsSpawner : MonoBehaviour
 {
     public float speed;
     public float fireRate;
@@ -27,21 +27,9 @@ public class ProjectileMove : MonoBehaviour
             }
         }
     }
-
-    void Update()
-    {
-        if (speed != 0)
-        {
-            transform.position += transform.forward * (speed * Time.deltaTime);
-        }
-        else
-        {
-            Debug.Log("No Speed");
-        }
-    }
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log(other.name);
+       // Debug.Log(other.name);
     }
     void OnCollisionEnter (Collision co)
     {

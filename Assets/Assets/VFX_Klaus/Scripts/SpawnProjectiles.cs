@@ -26,7 +26,7 @@ public class SpawnProjectiles : MonoBehaviour
         // Shoot Effect
         if(Input.GetMouseButton (0) && Time.time >= timeToFire)
         {
-            timeToFire = Time.time + 1 / effectToSpawn.GetComponent<ProjectileMove>().fireRate;
+            timeToFire = Time.time + 1 / effectToSpawn.GetComponent<ProjectileEffectsSpawner>().fireRate;
             SpawnEffects();
         }
 

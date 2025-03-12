@@ -9773,6 +9773,7 @@ GameObject:
   - component: {fileID: 5927102068970675799}
   - component: {fileID: 5038688747924860168}
   - component: {fileID: 3997521406697415594}
+  - component: {fileID: 8716045046818239633}
   m_Layer: 0
   m_Name: FX_SingleTarget_FireBall
   m_TagString: Untagged
@@ -9803,12 +9804,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2573282192751296438}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 20
   speed: 30
   fireRate: 4
   muzzlePrefab: {fileID: 5357767409460153518, guid: abb578eb9ed66e3498ca7796251288fb, type: 3}
@@ -9876,6 +9876,24 @@ MonoBehaviour:
   type: 0
   target: {fileID: 0}
   skillSpeed: 5
+  skillDuration: 5
+  damage: 15
+--- !u!114 &8716045046818239633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573282192751296438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
 --- !u!1 &4182710267408052820
 GameObject:
   m_ObjectHideFlags: 0

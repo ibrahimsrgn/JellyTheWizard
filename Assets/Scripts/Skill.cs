@@ -17,9 +17,13 @@ public class Skill : MonoBehaviour
     public int damage;
 
     private bool isMoving = false;
+    private bool canMove = false;
     private Vector3 startPosition;
     private float t = 0f;
-
+    private void Start()
+    {
+        Destroy(gameObject, skillDuration);
+    }
     public void UseSkill(SkillType skillType)
     {
         if (target == null)
@@ -46,18 +50,20 @@ public class Skill : MonoBehaviour
     {
         startPosition = transform.position;
         isMoving = true;
+        canMove = true;
         t = 0f;
     }
 
     private void StartAOESkill(Transform target)
     {
-        startPosition = target.position;
-        isMoving = true;
+        transform.position = target.position;
+        canMove = false;
         t = 0f;
     }
 
     private void ApplyBuff()
     {
+        canMove = false;
         transform.SetParent(target);
         // TODO BUFF
     }
@@ -75,13 +81,26 @@ public class Skill : MonoBehaviour
                 isMoving = false;
             }
         }
+        else if(canMove)
+        {
+            transform.position += transform.forward * (skillSpeed * Time.deltaTime);
+        }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         if (type == SkillType.Buff) return;
-        if (other.gameObject.GetComponent<HealthManager>() != null)
+        if (collision.gameObject.GetComponent<HealthManager>() != null)
         {
-            other.gameObject.GetComponent<HealthManager>().ApplyDamage(damage);
+            collision.gameObject.GetComponent<HealthManager>().ApplyDamage(damage);
+        }
+
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        if (type == SkillType.Buff) return;
+        if (other.GetComponent<HealthManager>() != null)
+        {
+            other.GetComponent<HealthManager>().ApplyDamage(damage);
         }
     }
 }

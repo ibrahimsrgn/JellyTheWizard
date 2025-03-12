@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5798330329507810466}
   - component: {fileID: 115522272450726946}
   - component: {fileID: 7205250639716563785}
+  - component: {fileID: -6711280959178301162}
+  - component: {fileID: 4697045559134422509}
   m_Layer: 0
   m_Name: FX_Buff_TelekinesisMindControl
   m_TagString: Untagged
@@ -4903,6 +4905,39 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-6711280959178301162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470452351184278102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4512b3840fbd10c40ba71f6c971e9f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  target: {fileID: 0}
+  skillSpeed: 5
+  skillDuration: 5
+  damage: 0
+--- !u!114 &4697045559134422509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470452351184278102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
 --- !u!1 &4728779001834363868
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,7 @@ public class SkillManager : MonoBehaviour
     }
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.F))
         {
             UseSkill(0 + skillIndex);
@@ -40,29 +41,28 @@ public class SkillManager : MonoBehaviour
     public void UseSkill(int skillIndex)
     {
         Skill _skill= skills[skillIndex].GetComponent<Skill>();
-        Debug.Log(_skill.type);
         GameObject skillPrefab=null;
         if (_skill.type==Skill.SkillType.Buff)
         {
-             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
+             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, transform.rotation);
             target = transform;
             skillType = Skill.SkillType.Buff;
         }
         else if (_skill.type == Skill.SkillType.SingleTarget)
         {
                 target = DeadLockEnemy.Instance.selectedEnemy;
-             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
+             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, transform.rotation);
             skillType = Skill.SkillType.SingleTarget;
         }
         else if (_skill.type == Skill.SkillType.AOE)
         {
                 target = DeadLockEnemy.Instance.selectedEnemy;
-             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, Quaternion.identity);
+             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, transform.rotation);
             skillType= Skill.SkillType.AOE;
         }
         Skill skill= skillPrefab?.GetComponent<Skill>();
         skill.target = target;
-        skill.type=skillType;
+        skill.UseSkill(skillType);
     }
 
     public void ChangeSkillTree(int skillInt)

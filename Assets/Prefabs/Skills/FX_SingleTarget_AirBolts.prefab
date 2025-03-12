@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 571959527600550356}
   - component: {fileID: 9161562063874725419}
   - component: {fileID: 3092839225643799196}
+  - component: {fileID: 8865541314349464530}
   m_Layer: 0
   m_Name: FX_SingleTarget_AirBolts
   m_TagString: Untagged
@@ -114,6 +115,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   target: {fileID: 0}
+  skillSpeed: 5
+  skillDuration: 5
+  damage: 0
+--- !u!114 &8865541314349464530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920954971928395533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
 --- !u!1 &2255087910313995134
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6418652298967432451}
   - component: {fileID: 8439825709159789725}
   - component: {fileID: 1877725703227072852}
+  - component: {fileID: -6689037854301605212}
   m_Layer: 0
   m_Name: FX_ShootAEO_AirSlice
   m_TagString: Untagged
@@ -67,7 +68,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -112,8 +113,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4512b3840fbd10c40ba71f6c971e9f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   target: {fileID: 0}
+  skillSpeed: 5
+  skillDuration: 5
+  damage: 15
+--- !u!114 &-6689037854301605212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109234916512774797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
 --- !u!1 &2694232975984394929
 GameObject:
   m_ObjectHideFlags: 0

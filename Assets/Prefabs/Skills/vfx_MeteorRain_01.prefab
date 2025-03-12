@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6260355067425574309}
   - component: {fileID: 5469199067594895354}
   - component: {fileID: 8252468760174311850}
+  - component: {fileID: -5440780813102224263}
   m_Layer: 0
   m_Name: vfx_MeteorRain_01
   m_TagString: Untagged
@@ -4851,6 +4852,24 @@ MonoBehaviour:
   type: 1
   target: {fileID: 0}
   skillSpeed: 5
+  skillDuration: 5
+  damage: 2
+--- !u!114 &-5440780813102224263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112067948354075035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b9d85d920bc042a7f4ad66be17a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  fireRate: 0
+  muzzlePrefab: {fileID: 0}
+  hitPrefab: {fileID: 0}
 --- !u!1 &8260748103852303286
 GameObject:
   m_ObjectHideFlags: 0
