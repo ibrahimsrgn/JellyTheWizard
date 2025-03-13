@@ -1,3 +1,5 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum SkillTree
@@ -15,11 +17,20 @@ public class SkillManager : MonoBehaviour
     private int skillIndex = 0;
     public SkillTree skillTree;
     public Skill.SkillType skillType;
+
+    private Dictionary<int, float> skillCooldowns = new();
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+        }
+    }
+    private void Start()
+    {
+        for(int i = 0; i < skills.Length; i++)
+        {
+            skillCooldowns.Add(i, 0f);
         }
     }
     private void Update()
@@ -40,8 +51,14 @@ public class SkillManager : MonoBehaviour
     }
     public void UseSkill(int skillIndex)
     {
+        if (skillCooldowns[skillIndex]>0f)
+        {
+            Debug.Log("Skill is on cooldown!");
+            return;
+        }
         Skill _skill= skills[skillIndex].GetComponent<Skill>();
         GameObject skillPrefab=null;
+
         if (_skill.type==Skill.SkillType.Buff)
         {
              skillPrefab = Instantiate(skills[skillIndex], firePoint.position, transform.rotation);
@@ -63,6 +80,8 @@ public class SkillManager : MonoBehaviour
         Skill skill= skillPrefab?.GetComponent<Skill>();
         skill.target = target;
         skill.UseSkill(skillType);
+        skillCooldowns[skillIndex]=skill.skillCooldown;
+        StartCoroutine(Cooldown(_skill.skillCooldown, skillIndex));
     }
 
     public void ChangeSkillTree(int skillInt)
@@ -82,6 +101,16 @@ public class SkillManager : MonoBehaviour
                 skillTree = SkillTree.telekinesis;
                 break;
         }
+    }
+
+    private IEnumerator Cooldown(float timer,int skillIndex)
+    {
+        while (skillCooldowns[skillIndex] > 0)
+        {
+            skillCooldowns[skillIndex] -= 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        skillCooldowns[skillIndex] = 0;
     }
 
 }

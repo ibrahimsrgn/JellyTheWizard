@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108550181}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4114,7 +4114,7 @@ GameObject:
   - component: {fileID: 1018960525}
   - component: {fileID: 1018960526}
   - component: {fileID: 1018960523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FreeLook Camera 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7807,7 +7807,6 @@ MonoBehaviour:
   FieldOfViewAngle: 110
   DetectionRadius: 10
   PatrolRadius: 0
-  NavMeshStoppingDistance: 0
   AttackDamage: 0
   AttackSpeed: 1
   AttackRange: 0
@@ -9461,7 +9460,7 @@ GameObject:
   - component: {fileID: 196019260595022120}
   - component: {fileID: 143940910023743708}
   - component: {fileID: 9075073867422686571}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'Follow with Lock On '
   m_TagString: Untagged
   m_Icon: {fileID: 0}

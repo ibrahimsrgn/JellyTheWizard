@@ -14,10 +14,12 @@ public class Skill : MonoBehaviour
     public Transform target;
     public float skillSpeed = 5f; // Hız kontrolü için
     public float skillDuration = 5f; // Süre kontrolü için
+    public float skillCooldown = 1f; // Süre kontrolü için
     public int damage;
 
     private bool isMoving = false;
     private bool canMove = false;
+    private bool inCooldown = false;
     private Vector3 startPosition;
     private float t = 0f;
     private void Start()
@@ -28,8 +30,7 @@ public class Skill : MonoBehaviour
     {
         if (target == null)
         {
-            Debug.LogWarning("Target is null! Cannot use skill.");
-            return;
+            Debug.LogWarning("Shooting without target.");
         }
         type = skillType;
         switch (type)
@@ -81,7 +82,7 @@ public class Skill : MonoBehaviour
                 isMoving = false;
             }
         }
-        else if(canMove)
+        if (canMove && target == null)
         {
             transform.position += transform.forward * (skillSpeed * Time.deltaTime);
         }
