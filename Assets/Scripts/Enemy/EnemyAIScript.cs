@@ -10,9 +10,10 @@ public class EnemyAIScript : MonoBehaviour
     public float FieldOfViewAngle = 110f;
     public float DetectionRadius = 10f;
     public float PatrolRadius;
+    public float ChaseDistance;
 
     [Header("Enemy Settings")]
-    public float AttackDamage;
+    public int AttackDamage;
     public float AttackSpeed;
     public float AttackRange;
     private bool EnemyCanAttack = true;
@@ -54,25 +55,27 @@ public class EnemyAIScript : MonoBehaviour
         yield return new WaitForSeconds(AttackSpeed);
         GameObject skillPrefab = Instantiate(EnemySkill, transform.position, Quaternion.identity);
         Skill skill = skillPrefab.GetComponent<Skill>();
+        skill.damage = AttackDamage;
         skill.target = PlayerRef;
         skill.UseSkill(Skill.SkillType.SingleTarget);
         EnemyCanAttack = true;
     }
-}
 
-/*private void RandomPatrolPoint()
+    public void RandomPatrolPoint()
     {
         Vector3 RandomDirection = Random.insideUnitSphere * PatrolRadius;
         RandomDirection += transform.position;
 
         NavMeshHit Hit;
-        if (NavMesh.SamplePosition(RandomDirection, out Hit, PatrolRadius, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(RandomDirection, out Hit, PatrolRadius, NavMesh.AllAreas)
+           && Agent.remainingDistance < 3.2f )
         {
             Agent.SetDestination(Hit.position);
         }
     }
+}
 
-    private bool CanSeePlayer()
+/*private bool CanSeePlayer()
     {
         Vector3 PlayerDirection = (PlayerRef.position - transform.position).normalized;
         float Angle = Vector3.Angle(PlayerDirection, transform.forward);

@@ -16,7 +16,7 @@ public class IdleState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Idle: Bekliyor...");
+        Debug.Log("Idle: Bekliyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
@@ -25,11 +25,15 @@ public class IdleState : IEnemyState
         {
             Enemy.SwitchState(new ChaseState());
         }
+        else
+        {
+            Enemy.SwitchState(new PatrolState());
+        }
     }
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Idle: Çýkýlýyor...");
+        Debug.Log("Idle: Çýkýlýyor...");
     }
 }
 
@@ -39,13 +43,13 @@ public class ChaseState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Chase: Baþlýyor...");
+        Debug.Log("Chase: Baþlýyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
     {
         Enemy.Agent.SetDestination(Enemy.PlayerRef.position);
-        if (Enemy.Agent.remainingDistance < 3f)
+        if (Enemy.Agent.remainingDistance < Enemy.AttackRange)
         {
             Enemy.SwitchState(new AttackState());
         }
@@ -53,7 +57,7 @@ public class ChaseState : IEnemyState
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Chase: Bitiyor...");
+        Debug.Log("Chase: Bitiyor...");
     }
 }
 /* ------------------------------------------------------------------------------------------------- */
@@ -61,12 +65,12 @@ public class AttackState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Attack: Baþlýyor...");
+        Debug.Log("Attack: Baþlýyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
     {
-        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) > 4)
+        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) > Enemy.ChaseDistance)
         {
             Enemy.SwitchState(new ChaseState());
         }
@@ -78,9 +82,35 @@ public class AttackState : IEnemyState
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Attack: Bitiyor...");
+        Debug.Log("Attack: Bitiyor...");
     }
 
+}
+
+public class PatrolState : IEnemyState
+{
+    public void EnterState(EnemyAIScript Enemy)
+    {
+        Debug.Log("Patrol: Baþlýyor...");
+    }
+
+    public void UpdateState(EnemyAIScript Enemy)
+    {
+        Debug.Log("Patrol DevAMke");
+        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) < Enemy.DetectionRadius)
+        {
+            Enemy.SwitchState(new ChaseState());
+        }
+        else
+        {
+            Enemy.RandomPatrolPoint();
+        }
+    }
+
+    public void ExitState(EnemyAIScript Enemy)
+    {
+        Debug.Log("Patrol: Bitiyor...");
+    }
 }
 
 /* ------------------------------------------------------------------------------------------------- */
