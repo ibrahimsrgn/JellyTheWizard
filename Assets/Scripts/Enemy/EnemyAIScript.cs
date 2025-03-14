@@ -73,9 +73,8 @@ public class EnemyAIScript : MonoBehaviour
             Agent.SetDestination(Hit.position);
         }
     }
-}
 
-/*private bool CanSeePlayer()
+    public bool CanSeePlayer()
     {
         Vector3 PlayerDirection = (PlayerRef.position - transform.position).normalized;
         float Angle = Vector3.Angle(PlayerDirection, transform.forward);
@@ -85,4 +84,5 @@ public class EnemyAIScript : MonoBehaviour
             return true;
         }
         return false;
-    }*/
+    }
+}
