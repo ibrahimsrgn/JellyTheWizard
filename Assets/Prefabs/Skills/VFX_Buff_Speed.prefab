@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8396415172295258722}
   - component: {fileID: 7213596401295907201}
   - component: {fileID: 7529259891468892789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4856,9 +4856,9 @@ GameObject:
   - component: {fileID: 3593932974234829271}
   - component: {fileID: -6429169484464968010}
   - component: {fileID: 3378895225257443341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VFX_Buff_Speed
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9705,6 +9705,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 0
 --- !u!114 &3378895225257443341
 MonoBehaviour:
@@ -9733,7 +9734,7 @@ GameObject:
   - component: {fileID: 7676645362690255294}
   - component: {fileID: 3945842599142654858}
   - component: {fileID: 3514996692024412641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

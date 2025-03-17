@@ -14,23 +14,24 @@ public interface IEnemyState
 
 public class IdleState : IEnemyState
 {
+
+    private float IdleStateTimer;
     public void EnterState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Idle: Bekliyor...");
+        IdleStateTimer = 0;
     }
 
     public void UpdateState(EnemyAIScript Enemy)
     {
-        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) < Enemy.DetectionRadius && Enemy.CanSeePlayer())
+        IdleStateTimer += Time.deltaTime;
+        if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) < Enemy.DetectionRadius)
         {
-            Enemy.SwitchState(new PatrolState());
+            Enemy.SwitchState(new ChaseState());
+            return;
         }
-        else if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) < Enemy.DetectionRadius && !Enemy.CanSeePlayer())
+        else if (IdleStateTimer <= 2)
         {
-            Enemy.SwitchState(new AlertState());
-        }
-        else
-        {
+            IdleStateTimer = 0;
             Enemy.SwitchState(new PatrolState());
         }
     }
@@ -77,11 +78,10 @@ public class AttackState : IEnemyState
         if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) > Enemy.ChaseDistance)
         {
             Enemy.SwitchState(new ChaseState());
+            return;
         }
-        else
-        {
-            Enemy.EnemySkillAttack();
-        }
+        
+        Enemy.EnemySkillAttack();
     }
 
     public void ExitState(EnemyAIScript Enemy)
@@ -93,9 +93,14 @@ public class AttackState : IEnemyState
 
 public class PatrolState : IEnemyState
 {
+    private float WaitTime;
+    private float WaitDuration;
+
     public void EnterState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Patrol: Baþlýyor...");
+        WaitTime = 0f;
+        WaitDuration = Random.Range(2f, 5f);
+        Enemy.RandomPatrolPoint();
     }
 
     public void UpdateState(EnemyAIScript Enemy)
@@ -103,10 +108,18 @@ public class PatrolState : IEnemyState
         if (Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) < Enemy.DetectionRadius)
         {
             Enemy.SwitchState(new ChaseState());
+            return;
         }
-        else
+
+        if (!Enemy.Agent.pathPending && Enemy.Agent.remainingDistance <= 3.2f)
         {
-            Enemy.RandomPatrolPoint();
+            WaitTime += Time.deltaTime;
+            if (WaitTime > WaitDuration)
+            {
+                WaitTime = 0f;
+                WaitDuration = Random.Range(2f, 5f);
+                Enemy.RandomPatrolPoint();
+            }
         }
     }
 
@@ -128,7 +141,7 @@ public class AlertState : IEnemyState
         Enemy.SwitchState(new ChaseState());
     }
 
-    public void ExitState (EnemyAIScript Enemy)
+    public void ExitState(EnemyAIScript Enemy)
     {
         //Debug.Log("Alert: Bitiyor...");
     }

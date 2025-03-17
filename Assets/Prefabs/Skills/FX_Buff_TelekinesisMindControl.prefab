@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7205250639716563785}
   - component: {fileID: -6711280959178301162}
   - component: {fileID: 4697045559134422509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Buff_TelekinesisMindControl
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4921,6 +4921,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 0
 --- !u!114 &4697045559134422509
 MonoBehaviour:
@@ -4949,7 +4950,7 @@ GameObject:
   - component: {fileID: 337939044745390995}
   - component: {fileID: 8291875917842283442}
   - component: {fileID: 892897267545572217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9784,7 +9785,7 @@ GameObject:
   - component: {fileID: 8293892642940697846}
   - component: {fileID: 7823757980332282487}
   - component: {fileID: 7451866201831971779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14693,7 +14694,7 @@ GameObject:
   - component: {fileID: 3388476015170949874}
   - component: {fileID: 2439349311447652171}
   - component: {fileID: 6499414295654806251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stun (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19585,7 +19586,7 @@ GameObject:
   - component: {fileID: 1457685936456926999}
   - component: {fileID: 1756069181943135798}
   - component: {fileID: 3399472175484261027}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24477,7 +24478,7 @@ GameObject:
   - component: {fileID: 9107273963840461212}
   - component: {fileID: 5768719314543018860}
   - component: {fileID: 8218911915339699251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

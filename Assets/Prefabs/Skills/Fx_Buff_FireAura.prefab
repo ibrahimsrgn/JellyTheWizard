@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7674791040888698156}
   - component: {fileID: 6753950443862418367}
   - component: {fileID: 8491207017009312840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spinning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4844,7 +4844,7 @@ GameObject:
   - component: {fileID: 8739987552863293834}
   - component: {fileID: 8556888191413711142}
   - component: {fileID: 7779552548063217126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlackBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9679,9 +9679,9 @@ GameObject:
   - component: {fileID: 4587978828574664080}
   - component: {fileID: -1428437270615687265}
   - component: {fileID: 3479665341066503920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fx_Buff_FireAura
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14519,6 +14519,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 0
 --- !u!114 &3479665341066503920
 MonoBehaviour:

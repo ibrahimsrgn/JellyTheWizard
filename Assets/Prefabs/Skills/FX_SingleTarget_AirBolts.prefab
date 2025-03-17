@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 571959527600550356}
   - component: {fileID: 9161562063874725419}
   - component: {fileID: 3092839225643799196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_SingleTarget_AirBolts
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 0
 --- !u!1 &2255087910313995134
 GameObject:
@@ -128,7 +129,7 @@ GameObject:
   - component: {fileID: 9168280933896406140}
   - component: {fileID: 5448331249711210161}
   - component: {fileID: 2928604018716544666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: trail_color2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4982,7 +4983,7 @@ GameObject:
   - component: {fileID: 5283473486283607259}
   - component: {fileID: 5249386792868626152}
   - component: {fileID: 1862281284376438466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front_mesh_color2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9885,7 +9886,7 @@ GameObject:
   - component: {fileID: 2625386525265540682}
   - component: {fileID: 1627039505718507272}
   - component: {fileID: 12180088660729104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Shoot_Laser_02_projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14742,7 +14743,7 @@ GameObject:
   - component: {fileID: 6067856358582796478}
   - component: {fileID: 2030378692610006849}
   - component: {fileID: 2456884116889687643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front_mesh_color1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

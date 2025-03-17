@@ -67,8 +67,7 @@ public class EnemyAIScript : MonoBehaviour
         RandomDirection += transform.position;
 
         NavMeshHit Hit;
-        if (NavMesh.SamplePosition(RandomDirection, out Hit, PatrolRadius, NavMesh.AllAreas)
-           && Agent.remainingDistance < 3.2f )
+        if (NavMesh.SamplePosition(RandomDirection, out Hit, PatrolRadius, NavMesh.AllAreas))
         {
             Agent.SetDestination(Hit.position);
         }

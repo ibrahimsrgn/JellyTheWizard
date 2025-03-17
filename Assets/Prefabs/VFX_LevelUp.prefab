@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7795269797484801051}
   - component: {fileID: 6414535654387161773}
   - component: {fileID: 4037239704874406512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magic Base 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4947,7 +4947,7 @@ GameObject:
   - component: {fileID: 8678982747165009342}
   - component: {fileID: 5787761777187136553}
   - component: {fileID: 1356189491738042009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9847,7 +9847,7 @@ GameObject:
   - component: {fileID: 5389093692319479429}
   - component: {fileID: 9218849999404788504}
   - component: {fileID: 1850064743369370043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Magic Base '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14783,9 +14783,9 @@ GameObject:
   - component: {fileID: 7479026404063574042}
   - component: {fileID: 2235179292437459103}
   - component: {fileID: 7406039104606864569}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VFX_LevelUp
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19723,7 +19723,7 @@ GameObject:
   - component: {fileID: 6647095657758217325}
   - component: {fileID: 135207782675178545}
   - component: {fileID: 3778644487245742331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magic Base 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

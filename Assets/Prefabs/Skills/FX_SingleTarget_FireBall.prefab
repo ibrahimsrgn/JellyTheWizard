@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4761558717914757322}
   - component: {fileID: 3137893495658139521}
   - component: {fileID: 3341931537577820008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Shoot_Gas_projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4917,7 +4917,7 @@ GameObject:
   - component: {fileID: 351334081343055557}
   - component: {fileID: 224492956349568843}
   - component: {fileID: 48893488076926016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: front_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9773,9 +9773,9 @@ GameObject:
   - component: {fileID: 5927102068970675799}
   - component: {fileID: 5038688747924860168}
   - component: {fileID: 3997521406697415594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_SingleTarget_FireBall
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9876,6 +9876,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 15
 --- !u!1 &4182710267408052820
 GameObject:
@@ -9888,7 +9889,7 @@ GameObject:
   - component: {fileID: 7934708572398954172}
   - component: {fileID: 8916714727887141692}
   - component: {fileID: 6688383442626611117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14742,7 +14743,7 @@ GameObject:
   - component: {fileID: 6302772295208073006}
   - component: {fileID: 6919079464051917796}
   - component: {fileID: 8326246916733200812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: helix
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5469199067594895354}
   - component: {fileID: 8252468760174311850}
   - component: {fileID: -5440780813102224263}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vfx_MeteorRain_01
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4853,6 +4853,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 2
 --- !u!114 &-5440780813102224263
 MonoBehaviour:
@@ -4881,7 +4882,7 @@ GameObject:
   - component: {fileID: 7925170282240452059}
   - component: {fileID: 3679311524433169170}
   - component: {fileID: 6700452850028969572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

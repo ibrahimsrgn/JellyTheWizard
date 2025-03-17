@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8439825709159789725}
   - component: {fileID: 1877725703227072852}
   - component: {fileID: -6689037854301605212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_ShootAEO_AirSlice
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 15
 --- !u!114 &-6689037854301605212
 MonoBehaviour:
@@ -145,7 +146,7 @@ GameObject:
   - component: {fileID: 2438063653931474633}
   - component: {fileID: 7713730915726724796}
   - component: {fileID: 1792788527493529705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5048,7 +5049,7 @@ GameObject:
   - component: {fileID: 8803575940227445768}
   - component: {fileID: 4258547142636340321}
   - component: {fileID: 6811545159266879767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spin_highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9960,7 +9961,7 @@ GameObject:
   - component: {fileID: 4476269955415451084}
   - component: {fileID: 6313372798843020356}
   - component: {fileID: 2940673714047286073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Shoot_Dagger_projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

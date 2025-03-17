@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2836492624112294241}
   - component: {fileID: 3546529394033992455}
   - component: {fileID: 4758951030061418510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: back_circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,9 +4916,9 @@ GameObject:
   - component: {fileID: 8905252677086350978}
   - component: {fileID: 7348666604578948165}
   - component: {fileID: 450230413537864846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_ShootAOE_FireMeteor
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5019,6 +5019,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 0
 --- !u!1 &5930468368924450206
 GameObject:
@@ -5031,7 +5032,7 @@ GameObject:
   - component: {fileID: 4926678115946112168}
   - component: {fileID: 8633899573798384866}
   - component: {fileID: 4528586171732704182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: inner_core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10001,7 +10002,7 @@ GameObject:
   - component: {fileID: 8298007330727302655}
   - component: {fileID: 2927337453175484873}
   - component: {fileID: 6498114633734012675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Shoot_EnergyBall_projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14859,7 +14860,7 @@ GameObject:
   - component: {fileID: 8708763044428158566}
   - component: {fileID: 1336091906015731521}
   - component: {fileID: 5820851147427081887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19838,7 +19839,7 @@ GameObject:
   - component: {fileID: 8069163514424541887}
   - component: {fileID: 5225521609649149566}
   - component: {fileID: 8784133074752824132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: electric
   m_TagString: Untagged
   m_Icon: {fileID: 0}

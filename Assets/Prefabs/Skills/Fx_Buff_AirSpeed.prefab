@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3780393315393704579}
   - component: {fileID: 2871589160948056700}
   - component: {fileID: 4610243173078668393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fx_Buff_AirSpeed
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4853,6 +4853,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
+  skillCooldown: 1
   damage: 0
 --- !u!114 &4610243173078668393
 MonoBehaviour:
@@ -4881,7 +4882,7 @@ GameObject:
   - component: {fileID: 1640932362552400155}
   - component: {fileID: 2582677291050519523}
   - component: {fileID: 4498963996470880572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9714,7 +9715,7 @@ GameObject:
   - component: {fileID: 7640809386073380335}
   - component: {fileID: 8929876166350274432}
   - component: {fileID: 3024898830518829320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
