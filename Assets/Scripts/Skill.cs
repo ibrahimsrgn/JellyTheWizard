@@ -17,11 +17,11 @@ public class Skill : MonoBehaviour
     public float skillCooldown = 1f; // Süre kontrolü için
     public int damage;
 
-    private bool isMoving = false;
-    private bool canMove = false;
+    [HideInInspector] public bool isMoving = false;
+    [HideInInspector] public bool canMove = false;
     private bool inCooldown = false;
-    private Vector3 startPosition;
-    private float t = 0f;
+    [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public float t = 0f;
     private void Start()
     {
         Destroy(gameObject, skillDuration);
@@ -55,7 +55,7 @@ public class Skill : MonoBehaviour
         t = 0f;
     }
 
-    private void StartAOESkill(Transform target)
+    protected virtual void StartAOESkill(Transform target)
     {
         transform.position = target.position;
         canMove = false;

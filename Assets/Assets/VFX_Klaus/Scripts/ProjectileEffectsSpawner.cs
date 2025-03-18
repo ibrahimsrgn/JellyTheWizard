@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ProjectileEffectsSpawner : MonoBehaviour
 {
@@ -43,6 +44,27 @@ public class ProjectileEffectsSpawner : MonoBehaviour
             var hitVFX = Instantiate(hitPrefab, pos, rot);
             var psHit = hitVFX.GetComponent<ParticleSystem>();
             if (psHit != null) 
+            {
+                Destroy(hitVFX, psHit.main.duration);
+            }
+            else
+            {
+                var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+                Destroy(hitVFX, psChild.main.duration);
+            }
+        }
+        Destroy(gameObject);
+    }
+    public void RemoteCollisionTrigger(Vector3 pos, Vector3 normal)
+    {
+        speed = 0;
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, normal);
+
+        if (hitPrefab != null)
+        {
+            var hitVFX = Instantiate(hitPrefab, pos, rot);
+            var psHit = hitVFX.GetComponent<ParticleSystem>();
+            if (psHit != null)
             {
                 Destroy(hitVFX, psHit.main.duration);
             }

@@ -9794,7 +9794,7 @@ GameObject:
   - component: {fileID: 543349858025596515}
   - component: {fileID: 516984584724063295}
   - component: {fileID: 8265128017040804859}
-  - component: {fileID: 2655297881121552251}
+  - component: {fileID: -2776799567433737478}
   - component: {fileID: 7279712011351028920}
   m_Layer: 0
   m_Name: GreenSwordBeam
@@ -14649,7 +14649,7 @@ MonoBehaviour:
   fireRate: 5
   muzzlePrefab: {fileID: 8688734034850152445, guid: df8e002fd99af2c469513fdb673eef3d, type: 3}
   hitPrefab: {fileID: 8645211105480472435, guid: 8a885b2d8ec737a42a27299665bc665d, type: 3}
---- !u!114 &2655297881121552251
+--- !u!114 &-2776799567433737478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14658,15 +14658,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5131502165995709846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4512b3840fbd10c40ba71f6c971e9f7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 322bdb0d98bb7c343a54325486fc8cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
   skillCooldown: 1
   damage: 5
+  isMoving: 0
+  canMove: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  t: 0
 --- !u!65 &7279712011351028920
 BoxCollider:
   m_ObjectHideFlags: 0
