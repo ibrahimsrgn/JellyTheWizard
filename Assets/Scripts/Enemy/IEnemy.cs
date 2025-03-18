@@ -1,3 +1,4 @@
+using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -46,6 +47,7 @@ public class IdleState : IEnemyState
 
 public class ChaseState : IEnemyState
 {
+    private NavMeshHit Hit;
     public void EnterState(EnemyAIScript Enemy)
     {
         //Debug.Log("Chase: Baþlýyor...");
@@ -53,11 +55,17 @@ public class ChaseState : IEnemyState
 
     public void UpdateState(EnemyAIScript Enemy)
     {
-        Enemy.Agent.SetDestination(Enemy.PlayerRef.position);
-        if (Enemy.Agent.remainingDistance < Enemy.AttackRange)
+        if (NavMesh.SamplePosition(Enemy.PlayerRef.position, out Hit, 5f, NavMesh.AllAreas) && Hit.mask == (1 << NavMesh.GetAreaFromName("Deneme")))
         {
-            Enemy.SwitchState(new AttackState());
+            Enemy.Agent.SetDestination(Enemy.PlayerRef.position);
+            if (Enemy.Agent.remainingDistance < Enemy.AttackRange)
+            {
+                Enemy.SwitchState(new AttackState());
+            }
+            return;
         }
+
+        Enemy.SwitchState(new AlertState());
     }
 
     public void ExitState(EnemyAIScript Enemy)
@@ -133,12 +141,13 @@ public class AlertState : IEnemyState
 {
     public void EnterState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Alert: Baþlýyor...");
+        Debug.Log("Alert: Baþlýyor...");
     }
 
     public void UpdateState(EnemyAIScript Enemy)
     {
-        Enemy.SwitchState(new ChaseState());
+        Debug.Log("Alert: GOOO BRRRRRRRR");
+        //Enemy.SwitchState(new ChaseState());
     }
 
     public void ExitState(EnemyAIScript Enemy)
