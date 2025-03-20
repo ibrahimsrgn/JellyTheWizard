@@ -61,7 +61,9 @@ public class SkillManager : MonoBehaviour
 
         if (_skill.type==Skill.SkillType.Buff)
         {
-             skillPrefab = Instantiate(skills[skillIndex], firePoint.position, transform.rotation);
+            Vector3 pos=transform.position;
+            pos.z -= 0.7f;
+             skillPrefab = Instantiate(skills[skillIndex], pos, transform.rotation);
             target = transform;
             skillType = Skill.SkillType.Buff;
         }

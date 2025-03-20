@@ -9721,7 +9721,7 @@ MonoBehaviour:
   target: {fileID: 0}
   skillSpeed: 5
   skillDuration: 5
-  skillCooldown: 1
+  skillCooldown: 999
   damage: 672
   isMoving: 0
   canMove: 0
