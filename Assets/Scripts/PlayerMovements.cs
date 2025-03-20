@@ -5,6 +5,7 @@ public class PlayerMovements : MonoBehaviour
 {
     #region
     [Header("References")]
+    public static PlayerMovements Instance;
     public InputManager InputManager;
     public CharacterController Controller;
     public Transform CameraPose;
@@ -15,7 +16,10 @@ public class PlayerMovements : MonoBehaviour
     public Vector3 MoveDirection;
 
     #endregion
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Update()
     {
         Gravity();

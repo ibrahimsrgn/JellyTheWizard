@@ -55,7 +55,7 @@ public class ProjectileEffectsSpawner : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    public void RemoteCollisionTrigger(Vector3 pos, Vector3 normal)
+    public void RemoteCollisionTrigger(Vector3 pos, Vector3 normal,bool destroy)
     {
         speed = 0;
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, normal);
@@ -74,6 +74,9 @@ public class ProjectileEffectsSpawner : MonoBehaviour
                 Destroy(hitVFX, psChild.main.duration);
             }
         }
+        if (destroy)
+        {
         Destroy(gameObject);
+        }
     }
 }

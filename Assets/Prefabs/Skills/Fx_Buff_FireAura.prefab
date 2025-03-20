@@ -14521,6 +14521,10 @@ MonoBehaviour:
   skillDuration: 5
   skillCooldown: 1
   damage: 0
+  isMoving: 0
+  canMove: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  t: 0
 --- !u!114 &3479665341066503920
 MonoBehaviour:
   m_ObjectHideFlags: 0

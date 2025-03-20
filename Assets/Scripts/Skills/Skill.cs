@@ -62,7 +62,7 @@ public class Skill : MonoBehaviour
         t = 0f;
     }
 
-    private void ApplyBuff()
+    protected virtual void ApplyBuff()
     {
         canMove = false;
         transform.SetParent(target);

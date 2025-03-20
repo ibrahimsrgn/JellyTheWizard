@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1167720173284705723}
   - component: {fileID: 4638205389309795314}
   - component: {fileID: 362144450519861747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeamBody (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4902,7 +4902,7 @@ GameObject:
   - component: {fileID: 6137278621524895524}
   - component: {fileID: 6122856289057293831}
   - component: {fileID: 4779693054098948331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeamBody (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9796,9 +9796,10 @@ GameObject:
   - component: {fileID: 8265128017040804859}
   - component: {fileID: -2776799567433737478}
   - component: {fileID: 7279712011351028920}
-  m_Layer: 0
+  - component: {fileID: -2136347455338343954}
+  m_Layer: 8
   m_Name: GreenSwordBeam
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14684,7 +14685,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -14692,6 +14693,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0, z: -0.5}
+--- !u!54 &-2136347455338343954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131502165995709846}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5432756091494243600
 GameObject:
   m_ObjectHideFlags: 0
@@ -14703,7 +14731,7 @@ GameObject:
   - component: {fileID: 8827457606098340831}
   - component: {fileID: 2485598975923631195}
   - component: {fileID: 2278639417053772645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19545,7 +19573,7 @@ GameObject:
   - component: {fileID: 5327149145105902370}
   - component: {fileID: 6648074723583719152}
   - component: {fileID: 6093405238051727180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DarkBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24436,7 +24464,7 @@ GameObject:
   - component: {fileID: 6852703485808448683}
   - component: {fileID: 7172667389311834315}
   - component: {fileID: 7346208956319280838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29336,7 +29364,7 @@ GameObject:
   - component: {fileID: 8683410139220319653}
   - component: {fileID: 2894497031771604139}
   - component: {fileID: 253103583820069950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
