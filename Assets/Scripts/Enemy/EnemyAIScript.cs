@@ -53,11 +53,12 @@ public class EnemyAIScript : MonoBehaviour
     private IEnumerator AttackToPlayer()
     {
         yield return new WaitForSeconds(AttackSpeed);
-        GameObject skillPrefab = Instantiate(EnemySkill, transform.position, Quaternion.identity);
-        Skill skill = skillPrefab.GetComponent<Skill>();
-        skill.damage = AttackDamage;
-        skill.target = PlayerRef;
-        skill.UseSkill(Skill.SkillType.SingleTarget);
+        GameObject SkillPrefab = Instantiate(EnemySkill, transform.position, Quaternion.identity);
+        Skill Skill = SkillPrefab.GetComponent<Skill>();
+        Skill.damage = AttackDamage;
+        Skill.target = PlayerRef;
+
+        Skill.UseSkill(Skill.SkillType.SingleTarget);
         EnemyCanAttack = true;
     }
 
