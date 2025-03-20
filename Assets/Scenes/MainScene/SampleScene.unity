@@ -3661,7 +3661,7 @@ MonoBehaviour:
   AttackDamage: 10
   AttackSpeed: 1
   AttackRange: 10
-  EnemySkill: {fileID: 2573282192751296438, guid: 6e034a89d029ca04e814fc369d94fde0, type: 3}
+  EnemySkill: {fileID: 5771420482777750062, guid: 546caaf0cf77e1a42ae91c9eac0f0b8a, type: 3}
 --- !u!95 &902418115
 Animator:
   serializedVersion: 7
@@ -9142,7 +9142,7 @@ MonoBehaviour:
   AttackDamage: 10
   AttackSpeed: 1
   AttackRange: 3
-  EnemySkill: {fileID: 2573282192751296438, guid: 6e034a89d029ca04e814fc369d94fde0, type: 3}
+  EnemySkill: {fileID: 5771420482777750062, guid: 546caaf0cf77e1a42ae91c9eac0f0b8a, type: 3}
 --- !u!114 &1955059808
 MonoBehaviour:
   m_ObjectHideFlags: 0

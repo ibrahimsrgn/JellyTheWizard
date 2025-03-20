@@ -156,6 +156,12 @@ public class AlertState : IEnemyState
         {
             Enemy.Agent.SetDestination(Enemy.PlayerRef.position);
 
+            if (Enemy.Agent.remainingDistance < Enemy.AttackRange)
+            {
+                Enemy.SwitchState(new AttackState());
+                return;
+            }
+
             NavMeshHit hit;
             if (NavMesh.SamplePosition(Enemy.PlayerRef.position, out hit, 5f, NavMesh.AllAreas) && hit.mask == (1 << NavMesh.GetAreaFromName("Deneme")))
             {
