@@ -147,12 +147,30 @@ public class AlertState : IEnemyState
     public void UpdateState(EnemyAIScript Enemy)
     {
         Debug.Log("Alert: GOOO BRRRRRRRR");
-        //Enemy.SwitchState(new ChaseState());
+
+        Vector3 direction = (Enemy.PlayerRef.position - Enemy.transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        Enemy.transform.rotation = Quaternion.Slerp(Enemy.transform.rotation, lookRotation, Time.deltaTime * 5f);
+
+        if (Enemy.CanSeePlayer() || Vector3.Distance(Enemy.transform.position, Enemy.PlayerRef.position) < Enemy.DetectionRadius)
+        {
+            Enemy.Agent.SetDestination(Enemy.PlayerRef.position);
+
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(Enemy.PlayerRef.position, out hit, 5f, NavMesh.AllAreas) && hit.mask == (1 << NavMesh.GetAreaFromName("Deneme")))
+            {
+                Enemy.SwitchState(new ChaseState());
+                return;
+            }
+            return;
+        }
+
+        Enemy.SwitchState(new PatrolState());
     }
 
     public void ExitState(EnemyAIScript Enemy)
     {
-        //Debug.Log("Alert: Bitiyor...");
+        Debug.Log("Alert: Bitiyor...");
     }
 }
 
