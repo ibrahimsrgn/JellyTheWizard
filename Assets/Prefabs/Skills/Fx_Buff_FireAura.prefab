@@ -9677,8 +9677,8 @@ GameObject:
   - component: {fileID: 7166882744619618020}
   - component: {fileID: 2540425322325431055}
   - component: {fileID: 4587978828574664080}
-  - component: {fileID: -1428437270615687265}
   - component: {fileID: 3479665341066503920}
+  - component: {fileID: 5583854446852839365}
   m_Layer: 8
   m_Name: Fx_Buff_FireAura
   m_TagString: Spell
@@ -14503,28 +14503,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-1428437270615687265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8044827543618454677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4512b3840fbd10c40ba71f6c971e9f7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  target: {fileID: 0}
-  skillSpeed: 5
-  skillDuration: 5
-  skillCooldown: 1
-  damage: 0
-  isMoving: 0
-  canMove: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  t: 0
 --- !u!114 &3479665341066503920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14541,3 +14519,29 @@ MonoBehaviour:
   fireRate: 0
   muzzlePrefab: {fileID: 0}
   hitPrefab: {fileID: 0}
+--- !u!114 &5583854446852839365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8044827543618454677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f481444a118f334fb16139e6f2990bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  target: {fileID: 0}
+  skillSpeed: 2
+  skillDuration: 10
+  skillCooldown: 1
+  damage: 10
+  isMoving: 0
+  canMove: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  t: 0
+  radius: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64

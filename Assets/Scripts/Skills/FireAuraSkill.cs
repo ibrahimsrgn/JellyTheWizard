@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireAuraSkill : Skill
 {
     public float radius = 5;
+    [SerializeField] private LayerMask enemyLayer;
     protected override void ApplyBuff()
     {
         base.ApplyBuff();
@@ -16,14 +17,14 @@ public class FireAuraSkill : Skill
         while (timePassed < skillDuration)
         {
 
-            Collider[] enemies = Physics.OverlapSphere(transform.position, radius);
+            Collider[] enemies = Physics.OverlapSphere(transform.position, radius,enemyLayer);
             foreach (Collider enemy in enemies)
             {
                 enemy.gameObject.GetComponent<HealthManager>()?.ApplyDamage(damage);
             }
-        }
         timePassed += skillSpeed;
         yield return new WaitForSeconds(skillSpeed);
+        }
     }
     private void OnDrawGizmos()
     {
