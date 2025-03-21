@@ -4870,7 +4870,7 @@ MonoBehaviour:
   skillSpeed: 5
   skillDuration: 2323
   skillCooldown: 5
-  damage: 55
+  damage: 10
   isMoving: 0
   canMove: 0
   startPosition: {x: 0, y: 0, z: 0}
